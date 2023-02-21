@@ -1,0 +1,70 @@
+<div class="main-container">
+
+    <div class="left">
+        <img src="https://images.pexels.com/photos/445109/pexels-photo-445109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+    </div>
+    
+<form (ngSubmit)="submitForm()" #form="ngForm">
+
+    <div class="container">
+        <h1>Please enter your Details Here!</h1>
+<div ngModelGroup="personalDetails" >
+    <div class="form-group">
+        <label for="username"> Username</label>
+        <input type="text" [placeholder]="'John Doe'" name="username" ngModel required email
+         #user="ngModel">
+        <span class="error"  *ngIf="!user.valid && user.touched && user.errors!['required']" >Please enter a Valid Username</span>
+    </div>
+    
+    <div class="form-group">
+        <label for="email"> Email</label>
+        <input type="email" name="email" ngModel required email #email="ngModel">
+         <span *ngIf="!email.valid && email.touched" class="error">Please enter a Valid Email </span> 
+    </div>
+    
+    <div class="form-group">
+        <label> Phone Number</label>
+        <input type="text" name="phone" ngModel required >
+        <!-- <span class="error">Please enter a Valid Phone Number</span> -->
+    </div>
+</div>
+
+
+<div class="form-group">
+    <label>Occupation </label>
+<select name="role" [ngModel]="default" required>
+    <option value="default">Select a Position that fits you?</option>
+    <option value="FSJS">Full-stack  Javascript Developer</option>
+    <option value="FSJD">Full-stack Java Developer</option>
+    <option value="FSC#">Full-stack C# Developer</option>
+</select>
+<!-- <span class="error">Please enter a Valid Position</span> -->
+</div>
+
+
+<div class="form-group">
+    <label> Add A message</label>
+<textarea rows="3" name="message" name="message" ngModel required >
+</textarea>
+<!-- <span class="error">Please add a Message</span> -->
+</div>
+<p>Select Gender</p>
+<div class="form-group" *ngFor="let g of genders">
+  
+<label> <input type="radio" [value]="g" name="gender" required ngModel/>{{g}} </label>
+<!-- <span class="error">Please select Gender</span> -->
+</div>
+<button type="submit" [ngClass]="{invalid:!form.valid, valid:form.valid} " > Submit</button>
+</div>
+<button type="reset">Reset</button>
+</form>
+</div>
+
+
+<button (click)="prePopulate()">Prepopulate</button>
+
+<input type="text" name="theName"
+ value="DefaultValue"  onblur="if(this.value=='')
+ { this.value='DefaultValue'; this.style.color='#BBB';}"  
+ onfocus="if(this.value=='DefaultValue'){ this.value=''; this.style.color='#000';}"
+   style="color:#BBB;" />

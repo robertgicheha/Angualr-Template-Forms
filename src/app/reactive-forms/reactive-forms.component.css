@@ -1,0 +1,91 @@
+.main-container{
+    width:1500px;
+    display: flex;
+    justify-content: center;
+    border:  2px soid red;
+    gap:30px;
+}
+
+.left{
+    width: 40%;
+
+}
+
+.left img{
+    width: 100%;
+    height: 100%;
+}
+
+.right{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input{
+    padding: 10px;
+}
+
+.form-group select{
+    padding: 10px;
+}
+
+.container button{
+    color:white;
+    background-color: coral;
+    border-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.error{
+    color: red;
+}
+
+.form-group textarea{
+    margin-bottom: 10px;
+}
+
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+select.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.hobby{
+    margin-bottom: 10px;
+
+}
+
+.close{
+    color: white;
+    background-color: red;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.newControl{
+    display: flex;
+    gap: 30px;
+}
